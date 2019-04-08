@@ -1,0 +1,74 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="page-body">
+    <view class="swiper">
+      <swiper
+        indicator-dots="{{indicatorDots}}" 
+        autoplay="{{autoplay}}" 
+        circular="{{circular}}" 
+        vertical="{{vertical}}"
+        interval="{{interval}}" 
+        duration="{{duration}}" 
+        previous-margin="{{previousMargin}}px" 
+        next-margin="{{nextMargin}}px"
+        style="height:{{imgheights}}rpx;">
+        <block wx:for="{{imgUrls}}">
+          <swiper-item>
+            <image src="{{item}}" class="slide-image" width="355" height="150" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>  
+    <view class="navbar">
+      <!--循环-->
+      <view wx:for="{{navbar}}" data-idx="{{index}}" wx:key="unique" class="item {{currentTab==index ? 'active' : ''}}" bindtap="navbarTap">
+        <!-- <view class="notice" wx:if="{{count[index]>0}}">{{count[index]}}</view>
+        {{item}} -->
+        <text  bindtap="navbarTap">{{item}}</text>
+      </view>
+    </view>
+          <!--map-->
+    <view hidden="{{currentTab !== 0}}" id="one">
+      <image src='../../icon/map.jpeg' mode='aspectFit'>
+      </image>
+    </view>
+
+    <view hidden="{{currentTab !== 1}}" id="two">
+      <view class='page-down'>
+        <view class='page-top'>
+          景点动态
+        </view>
+              
+        <view class='page-mid'>
+          <button 
+          style="width: 120px; height: 80px;"
+          bindtap="jumpToTravel" 
+          hover-class="other-button-hover"> 
+          <image 
+          src='../../icon/Travel.svg' 
+          style="width: 20px; height: 20px;margin-bottom:-5px"
+          mode='widthFix'>
+          </image>
+          <view class='txt'> 游记攻略
+          </view>
+          
+          </button>
+
+          <button 
+          style="width: 120px; height: 80px;"
+          bindtap="jumpToEvent" 
+          hover-class="other-button-hover"> 
+          <image 
+          src='../../icon/Event.png' 
+          style="width: 23px; height: 23px;margin-bottom:-6px"
+          mode='widthFix'>
+          </image>
+          <view class = 'txt'>活动发布</view>
+          
+          </button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- </vieSw> -->

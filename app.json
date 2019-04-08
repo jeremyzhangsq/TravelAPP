@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/reserve/reserve",
+    "pages/surround/surround",
+    "pages/list/list",
+    "pages/article/article"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#000000",
+    "list": [
+      {
+        "selectedIconPath": "icon/Home_press.png",
+        "iconPath": "icon/Home.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "icon/Reserve_press.png",
+        "iconPath": "icon/Reserve.png",
+        "pagePath": "pages/reserve/reserve",
+        "text": "预约"
+      },
+      {
+        "selectedIconPath": "icon/About_press.png",
+        "iconPath": "icon/About.png",
+        "pagePath": "pages/surround/surround",
+        "text": "周边"
+      }
+    ]
+  },
+  "debug": true
+}

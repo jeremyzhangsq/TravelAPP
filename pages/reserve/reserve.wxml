@@ -1,0 +1,62 @@
+<!--pages/reserve/reserve.wxml-->
+<view class='container'>
+  <view class='photo'>
+    <image src='../../icon/Car.jpeg'></image>
+  </view>
+  <view class='item'>
+    <image class = 'icon' 
+      src='../../icon/People.png'>
+    </image>
+    <text class='txt'>
+       姓名
+    </text>
+    <view class="search_arr">  
+    <input class='input' focus="true" type="text" placeholder="请输入姓名" placeholder-style="color:#888888;"></input>
+    </view>
+  </view>
+  <view class='item'>
+    <image class = 'icon' 
+      src='../../icon/ID.png'>
+    </image>
+    <text class='txt'>
+       身份证
+    </text>
+    <view class="search_arr">  
+    <input class='input' focus="true" type="text" placeholder="请输入身份证号" placeholder-style="color:#888888;"></input>
+    </view>
+  </view>
+  <view class='item'>
+    <image class = 'icon' 
+      src='../../icon/Tel.png'>
+    </image>
+    <text class='txt'>
+       电话
+    </text>
+    <view class="search_arr">  
+    <input class='input' focus="true" type="text" placeholder="请输入联系电话" placeholder-style="color:#888888;"></input>
+    </view>
+  </view>
+  <view class='item'>
+    <image class = 'icon' 
+      src='../../icon/Time.png'>
+    </image>
+    <text class='txt'>
+       时间
+    </text>
+    <view class="pickers" style="color:{{color}}">  
+      <picker
+      mode="date"
+      bindchange="bindDateChange">
+          {{date}}
+      </picker>
+    </view>
+  </view>
+  <view class='submit'>
+    <button 
+      style="width: 100px; height: 40px;"
+      bindtap="default" 
+      hover-class="other-button-hover"> 
+      提交
+    </button>
+  </view>
+</view>
