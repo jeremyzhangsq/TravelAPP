@@ -44,12 +44,14 @@
 }  
 
 .img {
-  width: 20%;
-  height: 150rpx;
+  width: 30%;
+  height: 200rpx;
+  display: flex;
 }
 .art {
-  width: 80%;
-  height: 150rpx;
+  width: 70%;
+  height: 200rpx;
+  display: flex;
 }
  
  

@@ -16,7 +16,7 @@
 
 <view class='content'>
 <block wx:for="{{artlist}}">
-  <view class='img'>{{item.img}}</view>
+  <image class='img' src = '{{item.img}}'></image>
   <view class='art'>{{item.art}}</view>
 </block>
 </view>
