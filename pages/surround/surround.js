@@ -7,21 +7,18 @@ Page({
     
   },
   onReady: function () {
-    
+    // Do something when page show.
   },
   onShow: function () {
-    // Do something when page show.
     wx.setNavigationBarTitle({
       title: '周边',
     })
-    tapIndex:0
     wx.showActionSheet({
       itemList: ['美食', '住宿', '纪念品', '周边'],
       itemColor: '#000000',
       success: function (res1) {
-        tapIndex: res1.tapIndex;
         console.log("tapIndex is ", res1.tapIndex)
-        if (tapIndex == 0) {
+        if (res1.tapIndex == 0) {
           wx.navigateTo({
             url: '../article/article',
           })

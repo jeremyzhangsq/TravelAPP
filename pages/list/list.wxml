@@ -14,10 +14,16 @@
 </view>
 
 
-<view class='content'>
-<block wx:for="{{artlist}}">
-  <image class='img' src = '{{item.img}}'></image>
-  <view class='art'>{{item.art}}</view>
-</block>
+<view class='content' wx:for="{{artlist}}" data-index="{{index}}" bindtap="gotableinfo">
+  <image class='img' src = '{{item.image}}'></image>
+  <view class='art'>
+  <text decode='true' style='font-size:34rpx; color:#000000'>
+  {{item.title}}\n{{item.abstract}}
+  </text>
+  
+  <!-- <text style='font-size:30rpx; color:#999999'>
+  {{item.abstract}}
+  </text> -->
+  </view>
 </view>
 

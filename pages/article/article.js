@@ -5,14 +5,17 @@ Page({
    * Page initial data
    */
   data: {
-
+    pageURL:"http://borischen.me/wx/"
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    var that = this;
+    that.setData({
+      pageURL: that.data.pageURL + options.pageURL
+    })
   },
 
   /**
