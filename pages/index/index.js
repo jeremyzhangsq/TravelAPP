@@ -53,26 +53,12 @@ Page({
   },
   jumpToTravel() {
     wx.navigateTo({
-      url: '/pages/list/list',
-    })
-    wx.setNavigationBarTitle({
-      title: '游记攻略',
+      url: '/pages/list/list?title=游记攻略&type=1',
     })
   },
   jumpToEvent() {
     wx.navigateTo({
-      url: '/pages/list/list',
-    })
-    wx.setNavigationBarTitle({
-      title: '活动发布',
-    })
-  },
-  jumpToMap() {
-    wx.navigateTo({
-      url: '/pages/map/map',
-    })
-    wx.setNavigationBarTitle({
-      title: '地图',
+      url: '/pages/list/list?title=活动发布&type=2',
     })
   }
   

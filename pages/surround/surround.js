@@ -18,11 +18,27 @@ Page({
       itemColor: '#000000',
       success: function (res1) {
         console.log("tapIndex is ", res1.tapIndex)
+        var title = ''
+        var type = 0
         if (res1.tapIndex == 0) {
-          wx.navigateTo({
-            url: '../article/article',
-          })
+          title = "美食"
+          type = 3
         }
+        if (res1.tapIndex == 1) {
+          title = "住宿"
+          type = 4
+        }
+        if (res1.tapIndex == 2) {
+          title = "纪念品"
+          type = 5
+        }
+        if (res1.tapIndex == 3) {
+          title = "周边"
+          type = 6
+        }
+        wx.navigateTo({
+          url: '../list/list?title=' + title +'&type='+type,
+        })
       },
       fail(res1) {
         console.log(res1.errMsg)

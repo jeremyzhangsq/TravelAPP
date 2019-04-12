@@ -14,7 +14,7 @@
 </view>
 
 
-<view class='content' wx:for="{{artlist}}" data-index="{{index}}" bindtap="gotableinfo">
+<view class='content' wx:for="{{artlist}}" wx:if="{{item.type==type}}" data-index="{{index}}" bindtap="gotableinfo">
   <image class='img' src = '{{item.image}}'></image>
   <view class='art'>
   <text decode='true' style='font-size:34rpx; color:#000000'>
