@@ -5,7 +5,9 @@ Page({
    * Page initial data
    */
   data: {
-    pageURL:"http://borischen.me/wx/"
+    pageURL:"http://borischen.me/wx/",
+    title:" ",
+    id:0
   },
 
   /**
@@ -14,8 +16,11 @@ Page({
   onLoad: function (options) {
     var that = this;
     that.setData({
-      pageURL: that.data.pageURL + options.pageURL
-    })
+      pageURL: options.pageURL,
+      title: options.title,
+      id: options.id
+    });
+    console.log("id:",that.data.id)
   },
 
   /**
@@ -29,7 +34,10 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-
+    var that = this;
+    wx.setNavigationBarTitle({
+      title: that.data.title,
+    })
   },
 
   /**

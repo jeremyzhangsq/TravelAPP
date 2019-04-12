@@ -22,7 +22,7 @@
        身份证
     </text>
     <view class="search_arr">  
-    <input class='input' focus="true" type="text" placeholder="请输入身份证号" placeholder-style="color:#888888;"></input>
+    <input name = 'shenfenzheng' class='input' focus="true" type="text" placeholder="请输入身份证号" placeholder-style="color:#888888;"></input>
     </view>
   </view>
   <view class='item'>

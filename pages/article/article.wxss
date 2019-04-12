@@ -1,1 +1,21 @@
 /* pages/article/article.wxss */
+page {
+  background-color: #F8F8F8;
+  height: 100%;
+  font-size: 32rpx;
+  line-height: 1.6;
+}
+.page-top{
+  background-color:  #F8F8F8;
+  width: 100%;
+  height: 80%;
+}
+.page-down{
+  background-color: #F8F8F8;
+  width: 100%;
+  height: 20%;
+}
+.txt{
+  
+  font-size: 32rpx;
+}

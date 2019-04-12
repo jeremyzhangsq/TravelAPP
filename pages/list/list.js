@@ -99,7 +99,7 @@ Page({
     var index = parseInt(e.currentTarget.dataset.index);
     console.log("index = ", index);
     wx.navigateTo({
-      url: '../article/article?pageURL='+this.data.artlist[index].page
+      url: '../article/article?pageURL=' + this.data.artlist[index].page + '&title=' + this.data.artlist[index].title + '&id=' + this.data.artlist[index].id
     })
   }
   

@@ -1,2 +1,31 @@
 <!--pages/article/article.wxml-->
-<text>{{pageURL}}</text>
+<view class='page'>
+  <view class='page-top'>
+    {{pageURL}}
+    {{pageURL}}
+    {{pageURL}}
+    {{pageURL}}
+    {{pageURL}}
+    {{pageURL}}
+    {{pageURL}}
+    {{pageURL}}
+    {{pageURL}}
+    {{pageURL}}
+    {{pageURL}}
+    {{pageURL}}
+    {{pageURL}}
+    {{pageURL}}
+    {{pageURL}}
+  </view>
+  <view class="page-down">
+    <WxComment 
+    tipOne=" " 
+    tipTwo=" " 
+    submitBtnText="回复" 
+    articleID="{{id}}" 
+    contentLen='1'>
+    </WxComment>
+  </view>
+</view>
+
+
