@@ -5,14 +5,14 @@ Page({
   data:{
     focus: true,
     artlist: [
-      { "title": "test12131231", "abstract": "123123", "id": 14, "image": "../../icon/People.png", "page": "guides/article/14_test12131231.html", "type": 1, "isMain": 1 },
-      { "title": "jeremy", "abstract": "aaaa", "id": 10, "image": "../../icon/Map.png", "page": "guides/article/10_jeremy.html", "type": 6, "isMain": 1 },
-      { "title": "a", "abstract": "123123", "id": 1, "image": "../../icon/People.png", "page": "guides/article/14_test12131231.html", "type": 2, "isMain": 1 },
-      { "title": "b", "abstract": "aaaa", "id": 12, "image": "../../icon/Map.png", "page": "guides/article/10_jeremy.html", "type": 1, "isMain": 0 },
-      { "title": "c", "abstract": "123123", "id": 4, "image": "../../icon/People.png", "page": "guides/article/14_test12131231.html", "type": 2, "isMain": 0 },
-      { "title": "d", "abstract": "aaaa", "id": 3, "image": "../../icon/Map.png", "page": "guides/article/10_jeremy.html", "type": 3, "isMain": 0 },
-      { "title": "e", "abstract": "123123", "id": 2, "image": "../../icon/People.png", "page": "guides/article/14_test12131231.html", "type": 4, "isMain": 0 },
-      { "title": "fy", "abstract": "aaaa", "id": 11, "image": "../../icon/Map.png", "page": "guides/article/10_jeremy.html", "type": 5, "isMain": 0 }
+      { "title": "test12131231", "abstract": "123123", "id": 14, "image": 'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640', "page": "guides/article/14_test12131231.html", "type": 1, "isMain": 1 },
+      { "title": "jeremy", "abstract": "aaaa", "id": 10, "image": 'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640', "page": "guides/article/10_jeremy.html", "type": 6, "isMain": 1 },
+      { "title": "a", "abstract": "123123", "id": 1, "image": 'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640', "page": "guides/article/14_test12131231.html", "type": 2, "isMain": 0 },
+      { "title": "b", "abstract": "aaaa", "id": 12, "image": 'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640', "page": "guides/article/10_jeremy.html", "type": 1, "isMain": 0 },
+      { "title": "c", "abstract": "123123", "id": 4, "image": 'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640', "page": "guides/article/14_test12131231.html", "type": 2, "isMain": 0 },
+      { "title": "d", "abstract": "aaaa", "id": 3, "image": 'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640', "page": "guides/article/10_jeremy.html", "type": 3, "isMain": 0 },
+      { "title": "e", "abstract": "123123", "id": 2, "image": 'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640', "page": "guides/article/14_test12131231.html", "type": 4, "isMain": 1 },
+      { "title": "fy", "abstract": "aaaa", "id": 11, "image": 'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640', "page": "guides/article/10_jeremy.html", "type": 5, "isMain": 0 }
     ],
     artIndex: 0,
     title:' ',

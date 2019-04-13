@@ -75,6 +75,7 @@
   width: 60%;
   height: 210rpx;
   display: flex;
+  margin-left: 20rpx
 }
  
  

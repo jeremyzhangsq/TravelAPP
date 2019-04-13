@@ -12,9 +12,9 @@
         previous-margin="{{previousMargin}}px" 
         next-margin="{{nextMargin}}px"
         style="height:{{imgheights}}rpx;">
-        <block wx:for="{{imgUrls}}">
+        <block wx:for="{{MainPage}}">
           <swiper-item>
-            <image src="{{item}}" class="slide-image" width="355" height="150" />
+            <image src="{{item.image}}" class="slide-image" width="355" height="150" />
           </swiper-item>
         </block>
       </swiper>
