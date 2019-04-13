@@ -118,13 +118,15 @@ Page({
   sortList1 (){
     var that = this
     that.setData({
+      topChecked: false,
       timeChecked:true
     })
   },
   sortList2 () {
     var that = this
     that.setData({
-      topChecked: true
+      topChecked: true,
+      timeChecked: false
     })
   },
   gotableinfo: function(e){
