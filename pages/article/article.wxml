@@ -10,7 +10,7 @@
     src="{{src}}" controls loop
   ></audio>
   </view>
-  <!-- <view class="page-down">
+  <view class="page-down">
     <WxComment 
     tipOne=" " 
     tipTwo=" " 
@@ -18,7 +18,7 @@
     articleID="{{id}}" 
     contentLen='1'>
     </WxComment>
-  </view> -->
+  </view>
 </view>
 
 
