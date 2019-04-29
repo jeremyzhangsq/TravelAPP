@@ -30,7 +30,8 @@ Page({
         // console.log(res.data)
         let arr = []
         for(var i = 0;i<res.data.length;i++){
-          let item = {}
+          if (res.data[i][5]==option.type){
+            let item = {}
           item.title = res.data[i][0];
           item.abstract = res.data[i][1];
           item.id = res.data[i][2];
@@ -39,6 +40,7 @@ Page({
           item.type = res.data[i][5];
           item.isMain = res.data[i][6];
           arr.push(item)
+          }
         }
         that.setData({
           list: arr,

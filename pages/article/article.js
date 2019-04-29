@@ -8,8 +8,9 @@ Page({
   data: {
     pageURL:"https://borischen.cn/static/",
     title:" ",
-    name: '此时此刻',
+    name: '',
     author: '',
+    atag: false,
     src: 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46',
     id:0
   },
@@ -49,7 +50,27 @@ Page({
         })
       }
     })
-    console.log("id:",that.data.id)
+    wx.request({
+      url: 'https://borischen.cn/django/wx/article/'+this.data.id,
+      method: "get",
+      success: function (res) {
+        let data = res.data
+        console.log(data)
+        if (data.audio != "") {
+          that.setData({
+            src: 'https://borischen.cn/static/'+data.audio,
+            name: data.audio_title,
+            atag:true
+          })
+        }
+      },
+      fail(res) {
+        wx.showModal({
+          title: res.data.msg
+        })
+      }
+    })
+    
   },
   
 

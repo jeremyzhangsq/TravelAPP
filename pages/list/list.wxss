@@ -11,8 +11,7 @@
 }  
 .search_arr input{  
   margin-left: 60rpx;  
-  height: 60rpx;  
-  bord  .........elklklke
+  height: 60rpx; 
 }  
 .bc_text {  
   line-height: 68rpx;  

@@ -3,11 +3,13 @@
   <view class="wxParse">
     <import src="../../wxParse/wxParse.wxml"/>
     <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
-    <audio name="{{name}}" author="{{author}}" 
-    src="{{src}}" controls loop
-></audio>
+    
   </view>
-  
+  <view wx:if="{{atag}}">
+  <audio name="{{name}}" author="{{author}}" 
+    src="{{src}}" controls loop
+  ></audio>
+  </view>
   <!-- <view class="page-down">
     <WxComment 
     tipOne=" " 

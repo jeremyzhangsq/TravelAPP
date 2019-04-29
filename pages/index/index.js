@@ -28,7 +28,7 @@ Page({
         y: ''
       },
       success: function (res) {
-        // console.log(res.data)
+        console.log(res.data)
         let arr = []
         for (var i = 0; i < res.data.length; i++) {
           let item = {}
