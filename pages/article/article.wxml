@@ -1,23 +1,10 @@
 <!--pages/article/article.wxml-->
 <view class='page'>
-  <view class='page-top'>
-    {{pageURL}}
-    {{pageURL}}
-    {{pageURL}}
-    {{pageURL}}
-    {{pageURL}}
-    {{pageURL}}
-    {{pageURL}}
-    {{pageURL}}
-    {{pageURL}}
-    {{pageURL}}
-    {{pageURL}}
-    {{pageURL}}
-    {{pageURL}}
-    {{pageURL}}
-    {{pageURL}}
+  <view class="wxParse">
+    <import src="../../wxParse/wxParse.wxml"/>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
   </view>
-  <view class="page-down">
+  <!-- <view class="page-down">
     <WxComment 
     tipOne=" " 
     tipTwo=" " 
@@ -25,7 +12,7 @@
     articleID="{{id}}" 
     contentLen='1'>
     </WxComment>
-  </view>
+  </view> -->
 </view>
 
 

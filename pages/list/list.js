@@ -4,19 +4,13 @@ Page({
  
   data:{
     focus: true,
-    artlist: [
-      { "title": "test12131231", "abstract": "123123", "id": 14, "image": 'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640', "page": "guides/article/14_test12131231.html", "type": 1, "isMain": 1 },
-      { "title": "jeremy", "abstract": "aaaa", "id": 10, "image": 'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640', "page": "guides/article/10_jeremy.html", "type": 6, "isMain": 1 },
-      { "title": "a", "abstract": "123123", "id": 1, "image": 'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640', "page": "guides/article/14_test12131231.html", "type": 2, "isMain": 0 },
-      { "title": "b", "abstract": "aaaa", "id": 12, "image": 'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640', "page": "guides/article/10_jeremy.html", "type": 1, "isMain": 0 },
-      { "title": "c", "abstract": "123123", "id": 4, "image": 'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640', "page": "guides/article/14_test12131231.html", "type": 2, "isMain": 0 },
-      { "title": "d", "abstract": "aaaa", "id": 3, "image": 'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640', "page": "guides/article/10_jeremy.html", "type": 3, "isMain": 0 },
-      { "title": "e", "abstract": "123123", "id": 2, "image": 'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640', "page": "guides/article/14_test12131231.html", "type": 4, "isMain": 1 },
-      { "title": "fy", "abstract": "aaaa", "id": 11, "image": 'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640', "page": "guides/article/10_jeremy.html", "type": 5, "isMain": 0 }
-    ],
+    list: [],
+    alist:[],
     artIndex: 0,
     title:' ',
-    type:-1,
+    searchValue: '',
+    show: 0,
+    type:1,
     timeChecked:false,
     topChecked:false,
     inputValue: ''
@@ -25,38 +19,37 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (option) {
-
-    // wx.request({
-    //   url: 'http://borisChen.me/wx/article_list',
-    //   data: {
-    //     x: '',
-    //     y: ''
-    //   },
-    //   success: function (res) {
-    //     console.log(res.data)
-    //   },
-    //   fail: function(res){
-    //     console.log("fail")
-    //   }
-      
-    // })
-    // var json = {"title":"test12131231", "abstract":"123123", "id":14, "image":"guides/image/14.jpg","page":"guides/article/14_test12131231.html", "type":1,"isMain":1}
-    // var that = this;
-    // that.setData({
-    //   title:json.title,
-    //   abstract: json.abstract,
-    //   id: json.id,
-    //   image: "http://borisChen.me/static/"+json.image,
-    //   page: "http://borisChen.me/static/" + json.page,
-    //   type: json.type,
-    //   isMain:json.isMain
-    // })
-    var that = this;
-    that.setData({
-      title:option.title,
-      type:option.type
+    var that = this
+    wx.request({
+      url: 'https://borischen.cn/django/wx/article_list',
+      data: {
+        x: '',
+        y: ''
+      },
+      success: function (res) {
+        // console.log(res.data)
+        let arr = []
+        for(var i = 0;i<res.data.length;i++){
+          let item = {}
+          item.title = res.data[i][0];
+          item.abstract = res.data[i][1];
+          item.id = res.data[i][2];
+          item.image = "https://borischen.cn/static/"+res.data[i][3];
+          item.page = "https://borischen.cn/static/"+res.data[i][4];
+          item.type = res.data[i][5];
+          item.isMain = res.data[i][6];
+          arr.push(item)
+        }
+        that.setData({
+          list: arr,
+          alist:arr
+        })
+        console.log(that.data.list)
+      },
+      fail: function(res){
+        console.log("fail")
+      }    
     })
-    console.log(that.data.type)
   },
 
   /**
@@ -115,6 +108,30 @@ Page({
       focus: true
     })
   },
+  suo: function (e) {
+    let al = []
+    var that = this
+    console.log(that.data.searchValue)
+    for(var i = 0;i<that.data.list.length;i++){
+      let item = that.data.list[i]
+      var str = item.title+item.abstract
+      console.log(str)
+      if (str.indexOf(that.data.searchValue) != -1) {
+        al.push(item)
+      }
+    }
+    console.log(al)
+    that.setData({
+      alist:al
+    })
+  },
+  searchValueInput: function (e) {
+    var value = e.detail.value;
+    var that = this
+    that.setData({
+      searchValue: value,
+    });
+  },
   sortList1 (){
     var that = this
     that.setData({
@@ -133,7 +150,7 @@ Page({
     var index = parseInt(e.currentTarget.dataset.index);
     console.log("index = ", index);
     wx.navigateTo({
-      url: '../article/article?pageURL=' + this.data.artlist[index].page + '&title=' + this.data.artlist[index].title + '&id=' + this.data.artlist[index].id
+      url: '../article/article?pageURL='+this.data.list[index].page + '&title=' + this.data.list[index].title + '&id=' + this.data.list[index].id
     })
   }
   
