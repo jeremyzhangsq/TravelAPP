@@ -11,7 +11,8 @@
        姓名
     </text>
     <view class="search_arr">  
-    <input class='input' focus="true" type="text" placeholder="请输入姓名" placeholder-style="color:#888888;"></input>
+    <input class='input' focus="true" type="text" placeholder="请输入姓名" 
+    placeholder-style="color:#888888;" bindinput='nameInput'></input>
     </view>
   </view>
   <view class='item'>
@@ -22,7 +23,8 @@
        身份证
     </text>
     <view class="search_arr">  
-    <input name = 'shenfenzheng' class='input' focus="true" type="text" placeholder="请输入身份证号" placeholder-style="color:#888888;"></input>
+    <input name = 'shenfenzheng' class='input' focus="true" type="idcard" 
+    placeholder="请输入身份证号" placeholder-style="color:#888888;" bindinput='idInput'></input>
     </view>
   </view>
   <view class='item'>
@@ -33,7 +35,8 @@
        电话
     </text>
     <view class="search_arr">  
-    <input class='input' focus="true" type="text" placeholder="请输入联系电话" placeholder-style="color:#888888;"></input>
+    <input class='input' focus="true" type="number" placeholder="请输入联系电话" 
+    placeholder-style="color:#888888;" value = "{{tel}}" bindinput='telInput'></input>
     </view>
   </view>
   <view class='item'>
@@ -54,7 +57,7 @@
   <view class='submit'>
     <button 
       style="width: 100px; height: 40px;"
-      bindtap="default" 
+      bindtap="submit" 
       hover-class="other-button-hover"> 
       提交
     </button>
