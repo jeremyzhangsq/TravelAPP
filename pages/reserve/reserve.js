@@ -7,7 +7,8 @@ Page({
   data: {
     index: 0,
     multiIndex: [0, 0, 0],
-    date: '2019-09-01',
+    date: '2019-04-08',
+    timestamp: 1554713898,
     name: "",
     id: '',
     tel:'',
@@ -48,26 +49,34 @@ Page({
     });
   },
   bindDateChange(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
+    var d = e.detail.value+" 12:00:00"
+    console.log(d)
+    var dateTmp = d.replace(/-/g, '/')   //为了兼容IOS，需先将字符串转换为'2018/9/11 9:11:23'
+    var time = new Date(dateTmp).getTime()/1000
+    console.log(time)
     this.setData({
       date: e.detail.value,
+      timestamp: time,
       color: '#000000'
     })
+    
+    
   },
   submit:function (e){
   
     var that = this //创建一个名为that的变量来保存this当前的值  
     wx.request({
-      url: 'https://borischen.cn/django/appointment/change_info',
+      url: 'https://borischen.cn/django/wx/appointment/',
       method: 'post',
       data: {
         name: that.data.name,
         id_card : that.data.id,
         phone : that.data.tel,
-        date : that.data.date
+        date: that.data.timestamp
       },
       header: {
-        'content-type': 'application/x-www-form-urlencoded'  //这里注意POST请求content-type是小写，大写会报错  
+        // 'content-type': 'application/x-www-form-urlencoded'  //这里注意POST请求content-type是小写，大写会报错  
+        'content-type': 'application/x-www-form-urlencoded;charset=UTF-8' 
       },
       success: function (res) {
         // that.setData({ //这里是修改data的值  
