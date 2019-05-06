@@ -1,8 +1,14 @@
 <!--pages/article/article.wxml-->
 <view class='page'>
-  <view class='txt'>
-  {{title}}
+  <view class='title'>
+    <view class='txt'>
+      {{title}}
+    </view>
+    <view class='click'>
+      点击量：{{click}}
+    </view>
   </view>
+    
   
   <view class="wxParse">
     <import src="../../wxParse/wxParse.wxml"/>

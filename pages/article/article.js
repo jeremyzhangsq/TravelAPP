@@ -10,6 +10,7 @@ Page({
     title:" ",
     name: '',
     author: '',
+    click:1,
     atag: false,
     src: '',
     id:0
