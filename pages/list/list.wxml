@@ -22,9 +22,16 @@
 <view class='content' wx:for="{{alist}}" wx:if="{{item.type==type}}" data-index="{{index}}" bindtap="gotableinfo">
   <image class='img' src = '{{item.image}}'></image>
   <view class='art'>
-  <text decode='true' style='font-size:34rpx; color:#000000'>
-  {{item.title}}\n{{item.abstract}}
-  </text>
-  </view>
+    <view class='art'>
+    <text decode='true' style='font-size:34rpx; color:#000000'>
+    {{item.title}}
+    </text>
+    </view>
+    <view class='art'>
+    <text decode='true' style='font-size:30rpx; color:grey'>
+    {{item.abstract}}
+    </text>
+    </view>
+  </view>  
 </view>
 

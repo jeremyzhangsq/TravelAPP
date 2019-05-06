@@ -1,16 +1,19 @@
 <!--pages/article/article.wxml-->
 <view class='page'>
+  <view class='txt'>
+  {{title}}
+  </view>
+  
   <view class="wxParse">
     <import src="../../wxParse/wxParse.wxml"/>
     <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
-    
   </view>
   <view wx:if="{{atag}}">
   <audio name="{{name}}" author="{{author}}" 
     src="{{src}}" controls loop
   ></audio>
   </view>
-  <view class="page-down">
+  <!-- <view class="page-down">
     <WxComment 
     tipOne=" " 
     tipTwo=" " 
@@ -18,7 +21,7 @@
     articleID="{{id}}" 
     contentLen='1'>
     </WxComment>
-  </view>
+  </view> -->
 </view>
 
 

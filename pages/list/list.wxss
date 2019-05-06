@@ -68,13 +68,19 @@
 .img {
   width: 280rpx;
   height: 210rpx;
+  margin-left: 10rpx;
   display: flex;
 }
 .art {
-  width: 60%;
-  height: 210rpx;
+  width: 420rpx;
+  height: 220rpx;
   display: flex;
-  margin-left: 20rpx
+  margin-top: -10rpx;
+  margin-bottom: -50rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  line-height: 35rpx;
+  flex-direction: column; 
 }
  
  

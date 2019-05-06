@@ -17,6 +17,7 @@ page {
   height: 20%;
 }
 .txt{
-  
-  font-size: 32rpx;
+  font-size: 40rpx;
+  margin: 20rpx;
+  border-bottom:5rpx solid lightgray;
 }

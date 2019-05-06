@@ -11,7 +11,7 @@ Page({
     name: '',
     author: '',
     atag: false,
-    src: 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46',
+    src: '',
     id:0
   },
 
@@ -20,12 +20,14 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    wx.setNavigationBarTitle({
+      title: options.title,
+    })
     that.setData({
       pageURL: options.pageURL,
-      title: options.title,
       id: options.id
     });
-
+    console.log(options.title);
     wx.request({
       url: that.data.pageURL,
       method: "get",
@@ -58,9 +60,10 @@ Page({
         console.log(data)
         if (data.audio != "") {
           that.setData({
+            title: data.title,
             src: 'https://borischen.cn/static/'+data.audio,
             name: data.audio_title,
-            atag:true
+            atag: true
           })
         }
       },
@@ -86,10 +89,7 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-    var that = this;
-    wx.setNavigationBarTitle({
-      title: that.data.title,
-    })
+    
   },
 
   /**

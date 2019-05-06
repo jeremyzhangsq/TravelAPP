@@ -20,6 +20,12 @@ Page({
    */
   onLoad: function (option) {
     var that = this
+    wx.setNavigationBarTitle({
+      title: option.title,
+    })
+    that.setData({
+      title:option.title,
+    })
     wx.request({
       url: 'https://borischen.cn/django/wx/article_list',
       data: {
@@ -32,14 +38,17 @@ Page({
         for(var i = 0;i<res.data.length;i++){
           if (res.data[i][5]==option.type){
             let item = {}
-          item.title = res.data[i][0];
-          item.abstract = res.data[i][1];
-          item.id = res.data[i][2];
-          item.image = "https://borischen.cn/static/"+res.data[i][3];
-          item.page = "https://borischen.cn/static/"+res.data[i][4];
-          item.type = res.data[i][5];
-          item.isMain = res.data[i][6];
-          arr.push(item)
+            var abs = res.data[i][1];
+            if(abs.length>25)
+              abs = abs.substring(0,25)+"......"
+            item.title = res.data[i][0];
+            item.abstract = abs;
+            item.id = res.data[i][2];
+            item.image = "https://borischen.cn/static/"+res.data[i][3];
+            item.page = "https://borischen.cn/static/"+res.data[i][4];
+            item.type = res.data[i][5];
+            item.isMain = res.data[i][6];
+            arr.push(item)
           }
         }
         that.setData({
@@ -65,10 +74,6 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-    var that = this;
-    wx.setNavigationBarTitle({
-      title: that.data.title,
-    })
   },
 
   /**
@@ -150,9 +155,8 @@ Page({
   },
   gotableinfo: function(e){
     var index = parseInt(e.currentTarget.dataset.index);
-    console.log("index = ", index);
     wx.navigateTo({
-      url: '../article/article?pageURL='+this.data.list[index].page + '&title=' + this.data.list[index].title + '&id=' + this.data.list[index].id
+      url: '../article/article?pageURL='+this.data.list[index].page + '&title=' + this.data.title + '&id=' + this.data.list[index].id
     })
   }
   
