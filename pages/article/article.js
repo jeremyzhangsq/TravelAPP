@@ -21,12 +21,14 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    wx.setNavigationBarTitle({
-      title: options.title,
-    })
+    console.log(options);
     that.setData({
       pageURL: options.pageURL,
       id: options.id
+    });
+    
+    wx.setNavigationBarTitle({
+      title: options.title,
     });
     console.log(options.title);
     wx.request({
@@ -34,7 +36,6 @@ Page({
       method: "get",
       success: function (res) {
         let data = res.data;
-        console.log(data)
         let total_content = data; //接口中带html标签的内容
         /**
          * WxParse.wxParse(bindName , type, data, target,imagePadding)
@@ -58,10 +59,12 @@ Page({
       method: "get",
       success: function (res) {
         let data = res.data
-        console.log(data)
+        that.setData({
+          title:data.title,
+          click: data.number_of_viewed
+        })
         if (data.audio != "") {
           that.setData({
-            title: data.title,
             src: 'https://borischen.cn/static/'+data.audio,
             name: data.audio_title,
             atag: true

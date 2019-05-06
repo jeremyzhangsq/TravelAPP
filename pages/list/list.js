@@ -10,6 +10,7 @@ Page({
     searchValue: '',
     show: 0,
     type:1,
+    title:'',
     timeChecked:false,
     topChecked:false,
     inputValue: ''
@@ -19,6 +20,9 @@ Page({
    */
   onLoad: function (option) {
     var that = this
+    that.setData({
+      title:option.title,
+    })
     wx.setNavigationBarTitle({
       title: option.title,
     })

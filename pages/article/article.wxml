@@ -19,15 +19,12 @@
     src="{{src}}" controls loop
   ></audio>
   </view>
-  <!-- <view class="page-down">
-    <WxComment 
-    tipOne=" " 
-    tipTwo=" " 
-    submitBtnText="回复" 
-    articleID="{{id}}" 
-    contentLen='1'>
-    </WxComment>
-  </view> -->
+  <view class="page-down">
+    <view class="WxComment">
+     <WxComment tipOne="WxComment " tipTwo="Powered by https://github.com/yicm" 
+     submitBtnText="回复" articleID="{{id}}" contentLen='1' theme="light"></WxComment>
+</view>
+  </view>
 </view>
 
 
