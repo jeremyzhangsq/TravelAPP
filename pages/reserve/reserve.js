@@ -91,7 +91,7 @@ Page({
    */
   onShow: function () {
       wx.setNavigationBarTitle({
-        title: '缆车预订',
+        title: '导览车预订',
       })
   },
 

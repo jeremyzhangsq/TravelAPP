@@ -41,17 +41,29 @@
               
         <view class='page-mid'>
           <button 
-          style="width: 120px; height: 80px;"
-          bindtap="jumpToTravel" 
-          hover-class="other-button-hover"> 
-          <image 
-          src='../../icon/Travel.svg' 
-          style="width: 20px; height: 20px;margin-bottom:-5px"
-          mode='widthFix'>
-          </image>
-          <view class='txt'> 游记攻略
-          </view>
-          
+            style="width: 120px; height: 80px;"
+            bindtap="jumpToInfo" 
+            hover-class="other-button-hover"> 
+            <image 
+            src='../../icon/Info.svg' 
+            style="width: 20px; height: 20px;margin-bottom:-10px"
+            mode='widthFix'>
+            </image>
+            <view class='txt'> 景点信息
+            </view>
+          </button>
+
+          <button 
+            style="width: 120px; height: 80px;"
+            bindtap="jumpToTravel" 
+            hover-class="other-button-hover"> 
+            <image 
+            src='../../icon/Travel.svg' 
+            style="width: 20px; height: 20px;margin-bottom:-10px"
+            mode='widthFix'>
+            </image>
+            <view class='txt'> 游记攻略
+            </view>
           </button>
 
           <button 
@@ -60,7 +72,7 @@
           hover-class="other-button-hover"> 
           <image 
           src='../../icon/Event.png' 
-          style="width: 23px; height: 23px;margin-bottom:-6px"
+          style="width: 23px; height: 23px;margin-bottom:-10px"
           mode='widthFix'>
           </image>
           <view class = 'txt'>活动发布</view>

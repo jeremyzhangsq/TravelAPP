@@ -157,6 +157,11 @@ Page({
     wx.navigateTo({
       url: '/pages/list/list?title=活动发布&type=2',
     })
+  },
+  jumpToInfo() {
+    wx.navigateTo({
+      url: '/pages/list/list?title=景点信息&type=7',
+    })
   }
   
 })

@@ -1,7 +1,7 @@
 <!--pages/reserve/reserve.wxml-->
 <view class='container'>
   <view class='photo'>
-    <image src='../../icon/Car.jpeg'></image>
+    <image src='../../icon/Car.jpeg' style='width:100%'></image>
   </view>
   <view class='item'>
     <image class = 'icon' 
@@ -13,18 +13,6 @@
     <view class="search_arr">  
     <input class='input' focus="true" type="text" placeholder="请输入姓名" 
     placeholder-style="color:#888888;" bindinput='nameInput'></input>
-    </view>
-  </view>
-  <view class='item'>
-    <image class = 'icon' 
-      src='../../icon/ID.png'>
-    </image>
-    <text class='txt'>
-       身份证
-    </text>
-    <view class="search_arr">  
-    <input name = 'shenfenzheng' class='input' focus="true" type="idcard" 
-    placeholder="请输入身份证号" placeholder-style="color:#888888;" bindinput='idInput'></input>
     </view>
   </view>
   <view class='item'>
