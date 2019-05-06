@@ -14,10 +14,10 @@
   </view>  
 </view>
 
-<!-- <view class='sort'>  
+<view class='sort'>  
   <view class="{{timeChecked?'sort-item-press':'sort-item'}}" bindtap='sortList1'>时间</view> 
   <view class="{{topChecked?'sort-item-press':'sort-item'}}" bindtap='sortList2'>热门</view>
-</view> -->
+</view>
 
 <view class='content' wx:for="{{alist}}" wx:if="{{item.type==type}}" data-index="{{index}}" bindtap="gotableinfo">
   <image class='img' src = '{{item.image}}'></image>

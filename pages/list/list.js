@@ -5,13 +5,14 @@ Page({
   data:{
     focus: true,
     list: [],
+    viewlist:[],
     alist: [],
     artIndex: 0,
     searchValue: '',
     show: 0,
     type:1,
     title:'',
-    timeChecked:false,
+    timeChecked:true,
     topChecked:false,
     inputValue: ''
   },
@@ -48,15 +49,33 @@ Page({
             item.page = "https://borischen.cn/static/"+res.data[i][4];
             item.type = res.data[i][5];
             item.isMain = res.data[i][6];
+            item.number_of_viewed = res.data[i][7];
             arr.push(item)
           }
         }
+        let temp = [];
+        for(var i = 0;i<arr.length;i++){
+          temp.push(arr[i]);
+        }
+        for(var i = 0; i<arr.length; i++){
+          var hit = 0;
+          for(var j=i;j<arr.length;j++){
+              if(arr[j].number_of_viewed>hit){
+                hit = arr[j].number_of_viewed;
+                var a = temp[i];
+                temp[i] = temp[j];
+                temp[j] = a;
+              }
+          }
+        }
+        console.log(temp)
         that.setData({
           list: arr,
+          viewlist:temp,
           alist:arr,
           type:option.type
         })
-        console.log(that.data.list)
+        
       },
       fail: function(res){
         console.log("fail")
@@ -147,12 +166,18 @@ Page({
       topChecked: false,
       timeChecked:true
     })
+    that.setData({
+      alist:that.data.list
+    })
   },
   sortList2 () {
     var that = this
     that.setData({
       topChecked: true,
       timeChecked: false
+    })
+    that.setData({
+      alist: that.data.viewlist
     })
   },
   gotableinfo: function(e){
