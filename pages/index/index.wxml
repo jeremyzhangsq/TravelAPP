@@ -27,10 +27,32 @@
         <text  bindtap="navbarTap">{{item}}</text>
       </view>
     </view>
-          <!--map-->
+
     <view hidden="{{currentTab !== 0}}" id="one">
-      <image src='../../icon/map.jpeg' mode='aspectFit'>
-      </image>
+      <!-- <image src='../../icon/map.jpeg' mode='aspectFit'>
+      </image> -->
+      <view class="page-down">
+      <swiper
+        indicator-dots="{{indicatorDots}}" 
+        autoplay= "false"
+        circular="{{circular}}" 
+        vertical="{{vertical}}"
+        interval="{{interval}}" 
+        duration="{{duration}}" 
+        previous-margin="{{previousMargin}}px" 
+        next-margin="{{nextMargin}}px"
+        style="height:{{imgheights}}rpx;">
+        <swiper-item>
+          <image src='../../icon/map.jpeg' class="slide-image" width="355" height="150" />
+        </swiper-item>
+        <swiper-item>
+          <image src='../../icon/map2.jpeg' class="slide-image" width="355" height="150" />
+        </swiper-item>
+        <swiper-item>
+          <image src='../../icon/map3.jpeg' class="slide-image" width="355" height="150" />
+        </swiper-item>
+      </swiper>
+    </view> 
     </view>
 
     <view hidden="{{currentTab !== 1}}" id="two">
