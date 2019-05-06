@@ -10,7 +10,7 @@ Page({
     date: '2019-04-08',
     timestamp: 1554713898,
     name: "",
-    id: '',
+    id: 0,
     tel:'',
     color: '#888888'
   },
@@ -35,14 +35,6 @@ Page({
       name: value,
     });
   },
-  idInput: function (e) {
-    var value = e.detail.value;
-    console.log(value)
-    var that = this
-    that.setData({
-      id: value,
-    });
-  },
   telInput: function (e) {
     this.setData({
       tel: e.detail.value,
@@ -58,8 +50,7 @@ Page({
       date: e.detail.value,
       timestamp: time,
       color: '#000000'
-    })
-    
+    })   
     
   },
   submit:function (e){
@@ -79,12 +70,22 @@ Page({
         'content-type': 'application/x-www-form-urlencoded;charset=UTF-8' 
       },
       success: function (res) {
-        // that.setData({ //这里是修改data的值  
-        //   test: res.data //test等于服务器返回来的数据  
-        // });
+      
+        if (res.data) {
+          console.log("navigate back");
+          wx.switchTab({
+            url: '/pages/index/index'
+          })
+        }
+      }, 
+      fail: function (res) {
         console.log(res.data)
       }
+
     });
+
+    
+   
   },
   /**
    * Lifecycle function--Called when page show

@@ -23,7 +23,7 @@
        电话
     </text>
     <view class="search_arr">  
-    <input class='input' focus="true" type="number" placeholder="请输入联系电话" 
+    <input class='input' focus="true" type="text" placeholder="请输入联系电话" 
     placeholder-style="color:#888888;" value = "{{tel}}" bindinput='telInput'></input>
     </view>
   </view>
