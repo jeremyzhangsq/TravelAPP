@@ -1,4 +1,4 @@
-<!--pages/list/list.wxml-->
+<!-- pages/list/list.wxml -->
 <view class='page_row'>  
   <view class="search">  
     <view class="search_arr">  

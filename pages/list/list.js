@@ -5,9 +5,8 @@ Page({
   data:{
     focus: true,
     list: [],
-    alist:[],
+    alist: [],
     artIndex: 0,
-    title:' ',
     searchValue: '',
     show: 0,
     type:1,
@@ -22,9 +21,6 @@ Page({
     var that = this
     wx.setNavigationBarTitle({
       title: option.title,
-    })
-    that.setData({
-      title:option.title,
     })
     wx.request({
       url: 'https://borischen.cn/django/wx/article_list',
@@ -53,7 +49,8 @@ Page({
         }
         that.setData({
           list: arr,
-          alist:arr
+          alist:arr,
+          type:option.type
         })
         console.log(that.data.list)
       },
@@ -61,6 +58,7 @@ Page({
         console.log("fail")
       }    
     })
+
   },
 
   /**

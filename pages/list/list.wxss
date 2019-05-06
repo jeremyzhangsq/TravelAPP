@@ -68,7 +68,7 @@
 .img {
   width: 280rpx;
   height: 210rpx;
-  margin-left: 10rpx;
+  margin: 10rpx;
   display: flex;
 }
 .art {
